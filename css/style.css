@@ -1,1 +1,3 @@
-h1 {color: rgb(0, 0, 0);}
+h1, h3, h4 {font-family: 'Times New Roman'; color: black;}
+header{background-color: blanchedalmond;} 
+body{background-color: rosybrown;}
