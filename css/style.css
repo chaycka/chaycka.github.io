@@ -2,4 +2,5 @@ h1, h3, h4 {font-family: 'Times New Roman'; color: black;}
 header{background-color: blanchedalmond;} 
 main {background-color: rosybrown;}
 .polosa {background-color: blanchedalmond;}
+.header_wraper{display:flex; flex-wrap: wrap; align-items: flex-end;justify-content: space-between;}
 
