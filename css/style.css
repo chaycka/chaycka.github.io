@@ -11,4 +11,6 @@ main {background-color: rosybrown;}
 .footer_ico{margin-right: 30px;border-width: 5px;}
 .html_cards{display: grid;grid-template-columns: repeat(3,1fr);}
 .cards{grid-column: span 1;margin-bottom: 10px;}
+.spiski{display: grid;grid-template-columns: repeat(2,1fr);}
+.one_spisok{grid-column: span 1;margin-bottom: 10px;}
 .header_h1 
