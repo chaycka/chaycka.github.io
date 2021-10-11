@@ -7,4 +7,4 @@ main {background-color: rosybrown;}
 .header_logo{flex-basis: 20%;}
 .header_menu{display: flex;flex-wrap: wrap;}
 .header_item{margin-right: 30px;border-width: 5px;text-decoration: none;border-left-style: solid;}
-.header_h1 
+.header_h1
