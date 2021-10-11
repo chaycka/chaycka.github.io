@@ -6,5 +6,5 @@ main {background-color: rosybrown;}
 .header_nav{display: flex;flex-wrap: wrap;}
 .header_logo{flex-basis: 20%;}
 .header_menu{display: flex;flex-wrap: wrap;}
+.header_item{margin-right: 30px;border-width: 5px;}
 .header_h1 
-.header_item
