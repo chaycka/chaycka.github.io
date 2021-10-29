@@ -24,5 +24,17 @@
     <button onclick="f(10000)"> No </button>
     <button id="btn3" onclick="d()">Why should I?</button>
     <script>document.getElementById("btn3").addEventListener("onclick",d)</script> 
+    <canvas id="squareCanvas" width="400" height="400" 
+     style="border:10px solid #000000;">
+</canvas>
+<script>
+    let art = document.getElementById("squareCanvas");
+    let stylish = art.getContext("2d");
+    stylish.fillStyle = "#000000";
+    stylish.fillRect(125,125,250,250);
+    stylish.moveTo(100,0);
+    stylish.lineTo(100,200);
+    stylish.stroke();
+    </script>
 </body>
 </html>
