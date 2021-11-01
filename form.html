@@ -7,6 +7,7 @@
     <title>Форма</title>
     <style>
         header{grid-area: header; background-color: Thistle; color: black;}
+        footer {grid-area: footer;background-color: Thistle; color: black;}
     </style>
 </head>
 <body>
@@ -20,13 +21,40 @@
                 <label for=""><input type="radio">не отвечать</label><br>
             </div>
             <div class="form-div">
-                <label for="theme">Укажите тему вопроса</label>
+                <label for="theme">Укажите тему вопроса:</label>
                 <select name="theme" id="theme" class="input-text">
                     <option value="">работа</option>
                     <option value="">сотрудничество</option>
                     <option value="">личное</option>
                 </select>
             </div>
+            <div class="form-div">
+                <div>И еще один вопрос?</div>
+                <label for="checkbox1"><input type="checkbox" name="" id="checkbox1">может так</label><br>
+                <label for="checkbox2"><input type="checkbox" name="" id="checkbox2">или так</label><br>
+                <label for="checkbox3"><input type="checkbox" name="" id="checkbox3">а может вот так</label>
+            </div>
+            <div class="form-div"></div>
+            <label for="name">Ваше имя:</label>
+            <input type="text" name="name" id="name" class="input-text">
+        </div>
+        <div class="form-div"></div>
+            <label for="email">Ваш email:</label>
+            <input type="email" name="email" id="email" class="input-text">
+        </div>
+        <div class="form-div"></div>
+            <label for="tel">Ваше номер телефона:</label>
+            <input type="tel" name="tel" id="tel" class="input-text">
+        </div>
+        <div class="form-div"></div>
+           <div>Задайте вопрос:</div>
+           <div>
+               <textarea cols="30"></textarea>
+           </div>
+        </div>
+        <div class="align-center"></div>
+          <input type="submit" value="Отправить вопрос" class="input-text">
+        </div>
         </form>
     </main>
     <footer>Веб-технологии, задание 2</footer>
