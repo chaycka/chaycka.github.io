@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-    <style></style>
+    <title>Форма</title>
+    <style>
+        header{grid-area: header; background-color: Thistle; color: black;}
+    </style>
 </head>
 <body>
-    <header>Form</header>
-    <main></main>
-    <footer></footer>
+    <header>Форма</header>
+    <main>
+        <form action="" method="get">
+            <div class="form-div">
+                <div>Как вам удобно получить ответ:</div>
+                <label for=""><input type="radio">по почте</label><br>
+                <label for=""><input type="radio">по телефону</label><br>
+                <label for=""><input type="radio">не отвечать</label><br>
+            </div>
+            <div class="form-div">
+                <label for="theme">Укажите тему вопроса</label>
+                <select name="theme" id="theme" class="input-text">
+                    <option value="">работа</option>
+                    <option value="">сотрудничество</option>
+                    <option value="">личное</option>
+                </select>
+            </div>
+        </form>
+    </main>
+    <footer>Веб-технологии, задание 2</footer>
 </body>
 </html>
