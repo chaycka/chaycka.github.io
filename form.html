@@ -78,10 +78,22 @@ grid-area: right;
     </style>
      <script>
          function checkForm(el){console.log("Проверка");
-        //  var
+         var fail="";
+         if (name==""||email==""||tel=="") 
+         fail="Заполните все поля.";    
+         else if (name.length<=1||name.length>30)
+         fail="Введите корректное имя.";
+         else if (email.contains("1"))
+         fail= "Введите корректный адрес электронной почты.";
+         if (fail != ""){
+             document.getElementById('error').innerHTML=fail;
+         } else{
+             alert("Данные заполнены");
+         }
          return false;}
 
      </script>   
+     <script></script>
 </head>
 <body>
     <header><h2>Форма</h2></header>
@@ -130,7 +142,8 @@ grid-area: right;
         <div class="align-center">
           <input type="submit" value="Отправить вопрос" class="input-text">
         </div>
-        
+        <div id="error" style="color: sienna;"></div>
+        <div id="vivod" style="color: brown;"></div>
         </form>
     </div>
     <div class="right"></div>
