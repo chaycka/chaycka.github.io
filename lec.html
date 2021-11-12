@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        area.value = localStorage.getItem('area');
+        area.oninput = () => {
+          localStorage.setItem('area', area.value)
+        };
+    </script>
+    <canvas id="squareCanvas" width="400" height="400" 
+    style="border:10px solid #000000;">
+</canvas>
+<script>
+   let art = document.getElementById("squareCanvas");
+   let stylish = art.getContext("2d");
+   stylish.fillStyle = "#000000";
+   stylish.fillRect(125,125,250,250);
+   stylish.moveTo(100,0);
+   stylish.lineTo(100,200);
+   stylish.stroke();
+   </script>
+</html>
