@@ -81,19 +81,20 @@ grid-area: right;
          var name = document.getElementById('name').value;
          console.log(name);
          var fail="";
-         var viv = name.value +""+ email.value +""+ tel.value;  
+         //var viv = name.value +" "+ email.value +" "+ tel.value;  
          var tel = document.getElementById('tel');  
          if (name==""||email==""||tel=="") 
          fail="Заполните все поля.";    
          else if (name.length<=1||name.length>30)
          fail="Введите корректное имя.";
-         else if (tel.split("@").lenght>1||tel.length>10)
-         fail = "Некорректный номер телефона."
+         else if (tel.length>10)
+         fail = "Некорректный номер телефона.";
          if (fail != ""){
              document.getElementById('error').innerHTML=fail;
-         } else{
-            document.getElementById('vivod').innerHTML=viv;
          } 
+        //  else{
+        //     document.getElementById('vivod').innerHTML=viv;
+        //  } 
          return false;
          }
 
@@ -136,7 +137,7 @@ grid-area: right;
         </div>
         <div class="form-div flex-row">
             <label for="tel" >Ваше номер телефона:</label>
-            <input type="tel" name="tel" id="tel" class="input-text" pattern="[0-9]" title="Номер телефона состоит из цифр">
+            <input type="tel" name="tel" id="tel" class="input-text">
         </div>
         <div class="form-div">
            <div>Задайте вопрос:</div>
