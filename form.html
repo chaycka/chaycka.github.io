@@ -81,19 +81,19 @@ grid-area: right;
          var name = document.getElementById('name').value;
          console.log(name);
          var fail="";
-         var viv = name.value +""+ email.value +""+ tel.value;    
+         var viv = name.value +""+ email.value +""+ tel.value;  
+         var tel = document.getElementById('tel');
+         var symbols = "!@#$%^&*()+=-[]\\\';,./{}|\":<>?";  
          if (name==""||email==""||tel=="") 
          fail="Заполните все поля.";    
          else if (name.length<=1||name.length>30)
          fail="Введите корректное имя.";
-         
-
+         else if (tel.length>=10)
+         fail="Введите корректный номер телефона."
          if (fail != ""){
              document.getElementById('error').innerHTML=fail;
-            
          } else{
             document.getElementById('vivod').innerHTML=viv;
-           
          } 
          return false;
          }
