@@ -77,20 +77,26 @@ grid-area: right;
 }
     </style>
      <script>
-         function checkForm(el){console.log("Проверка");
+         function checkForm(){console.log("Проверка");
+         var name = document.getElementById('name').value;
+         console.log(name);
          var fail="";
+         var viv = name.value +""+ email.value +""+ tel.value;    
          if (name==""||email==""||tel=="") 
          fail="Заполните все поля.";    
          else if (name.length<=1||name.length>30)
          fail="Введите корректное имя.";
-         else if (email.contains("1"))
-         fail= "Введите корректный адрес электронной почты.";
+         
+
          if (fail != ""){
              document.getElementById('error').innerHTML=fail;
+            
          } else{
-             alert("Данные заполнены");
+            document.getElementById('vivod').innerHTML=viv;
+           
+         } 
+         return false;
          }
-         return false;}
 
      </script>   
      <script></script>
