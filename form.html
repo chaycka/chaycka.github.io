@@ -76,7 +76,7 @@ grid-area: right;
     height: 30px;
 }
     </style>
-    
+
      <script>
          function checkForm(){console.log("Проверка");
          var name = document.getElementById('name1').value;
@@ -110,9 +110,9 @@ grid-area: right;
         <form action="" method="get" id="form1" onsubmit="return checkForm(this)">
             <div class="form-div">
                 <div>Как вам удобно получить ответ?</div>
-                <label for=""><input type="radio">по почте</label><br>
-                <label for=""><input type="radio">по телефону</label><br>
-                <label for=""><input type="radio">не отвечать</label><br>
+                <label for=""><input type="radio" id="pochta" value="по почте">по почте</label><br>
+                <label for=""><input type="radio" id="tel" value="по телефону">по телефону</label><br>
+                <label for=""><input type="radio" id="nootv" value="не отвечать">не отвечать</label><br>
             </div>
             <div class="form-div">
                 <label for="theme">Укажите тему вопроса:</label>
@@ -128,16 +128,16 @@ grid-area: right;
                 <label for="checkbox2"><input type="checkbox" name="" id="checkbox2">или так</label><br>
                 <label for="checkbox3"><input type="checkbox" name="" id="checkbox3">а может вот так</label>
             </div>
-            <div class="form-div flex-row">
-            <label for="name" >Ваше имя:</label>
+            <div class="form-div">
+            <label for="name" class="flex-row">Ваше имя:</label>
             <input type="text" name="name1" id="name1" class="input-text">
         </div>
-        <div class="form-div flex-row">
-            <label for="email" >Ваш email:</label>
+        <div class="form-div" id="email1">
+            <label for="email" class="flex-row">Ваш email:</label>
             <input type="email" name="email" id="email" class="input-text">
         </div>
-        <div class="form-div flex-row">
-            <label for="tel" >Ваше номер телефона:</label>
+        <div class="form-div" id="tel1">
+            <label for="tel" class="flex-row">Ваше номер телефона:</label>
             <input type="tel" name="tel" id="tel" class="input-text">
         </div>
         <div class="form-div">
@@ -156,5 +156,14 @@ grid-area: right;
     <div class="right"></div>
     </main>
     <footer>Веб-технологии, задание 2</footer>
+
+<script>
+document.getElementById('pochta').addEventListener("click", hiddenClose);
+function hiddenClose(){
+    let x = document.getElementsById('tel1');
+    
+} 
+</script>
+
 </body>
 </html>
