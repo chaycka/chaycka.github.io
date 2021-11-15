@@ -101,6 +101,14 @@ grid-area: right;
 
      </script>   
      
+<script>
+    function fanc(){
+        document.getElementById('pochta').checked=true;
+        document.getElementById('tel').checked=true;
+        document.getElementById('nootv').checked=true;
+    }
+</script>
+
 </head>
 <body>
     <header><h2>Форма</h2></header>
@@ -182,6 +190,9 @@ document.getElementById('svaz').addEventListener("click", hiddenClick);
 function hiddenClick(){
     let x = document.getElementById('tel1');
     let y = document.getElementById('email1');
+    if document.getElementById('pochta').checked{
+        y.style.visibility = 
+    }
 }
 
 </script>
