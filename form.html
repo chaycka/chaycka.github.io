@@ -108,7 +108,7 @@ grid-area: right;
         <div class="left"></div>
         <div class="middle">
         <form action="" method="get" id="form1" onsubmit="return checkForm(this)">
-            <div class="form-div">
+            <div class="form-div" id="svaz">
                 <div>Как вам удобно получить ответ?</div>
                 <label for=""><input type="radio" id="pochta" value="по почте">по почте</label><br>
                 <label for=""><input type="radio" id="tel" value="по телефону">по телефону</label><br>
@@ -137,7 +137,7 @@ grid-area: right;
             <input type="email" name="email" id="email" class="input-text">
         </div>
         <div class="form-div" id="tel1">
-            <label for="tel" class="flex-row">Ваше номер телефона:</label>
+            <label for="tel" class="flex-row">Ваш номер телефона:</label>
             <input type="tel" name="tel" id="tel" class="input-text">
         </div>
         <div class="form-div">
@@ -158,11 +158,32 @@ grid-area: right;
     <footer>Веб-технологии, задание 2</footer>
 
 <script>
-document.getElementById('pochta').addEventListener("click", hiddenClose);
-function hiddenClose(){
-    let x = document.getElementsById('tel1');
-    
-} 
+// document.getElementById('pochta').addEventListener("click", hiddenClose);
+// function hiddenClose(){
+//     let x = document.getElementById('tel1');
+//     if (x.style.display == "none"){
+//         x.style.display = "block";
+//     } else {
+//         x.style.display = "none";
+//     }
+// } 
+
+// document.getElementById('tel').addEventListener("click", hiddenClose1);
+// function hiddenClose1(){
+//     let y = document.getElementById('email1');
+//     if (y.style.display == "none"){
+//         y.style.display = "block";
+//     } else {
+//         y.style.display = "none";
+//     }
+// } 
+
+document.getElementById('svaz').addEventListener("click", hiddenClick);
+function hiddenClick(){
+    let x = document.getElementById('tel1');
+    let y = document.getElementById('email1');
+}
+
 </script>
 
 </body>
