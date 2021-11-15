@@ -76,32 +76,31 @@ grid-area: right;
     height: 30px;
 }
     </style>
+    
      <script>
          function checkForm(){console.log("Проверка");
-         var name = document.getElementById('name').value;
+         var name = document.getElementById('name1').value;
          console.log(name);
          var fail="";
-         //var viv = name.value +" "+ email.value +" "+ tel.value;  
+         var viv = name1.value +" "+ email.value +" "+ tel.value;  
          var tel = document.getElementById('tel');  
          if (name==""||email==""||tel=="") 
          fail="Заполните все поля.";    
-         else if (name.length<=1||name.length>30)
+         else if (name1.length<=1||name1.length>30)
          fail="Введите корректное имя.";
          else if (tel.length>10)
          fail = "Некорректный номер телефона.";
          if (fail != ""){
              document.getElementById('error').innerHTML=fail;
-        
          } 
-        //  else{
-        //     document.getElementById('vivod').innerHTML=viv;
-        //  } 
+        else{
+        document.getElementById('vivod').innerHTML=viv;
+        } 
          return false;
-         
          }
 
      </script>   
-     <script></script>
+     
 </head>
 <body>
     <header><h2>Форма</h2></header>
@@ -131,7 +130,7 @@ grid-area: right;
             </div>
             <div class="form-div flex-row">
             <label for="name" >Ваше имя:</label>
-            <input type="text" name="name" id="name" class="input-text">
+            <input type="text" name="name1" id="name1" class="input-text">
         </div>
         <div class="form-div flex-row">
             <label for="email" >Ваш email:</label>
