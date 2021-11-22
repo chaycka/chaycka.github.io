@@ -191,7 +191,14 @@ function hiddenClick(){
     let x = document.getElementById('tel1');
     let y = document.getElementById('email1');
     if (document.getElementById('pochta').checked){
-        y.style.visibility = 
+        y.style.visibility = 'visible';
+    } else {
+        y.style.visibility = 'hidden';
+    }
+    if (document.getElementById('tel').checked){
+        x.style.visibility = 'visible';
+    } else {
+        x.style.visibility = 'hidden';
     }
 }
 
