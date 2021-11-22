@@ -20,7 +20,10 @@
             var arr=['1.jpg', '2.jpg', '3.jpg', '4.jpg', '5.jpg'],
             block=document.querySelector('.block'),
             i=0;
-            
+            block.onclick = boo;
+            function boo(){
+                block.style.backgroundImage='url(images/'+arr[i]+')';
+            }
         </script>
     </section>
 </body>
