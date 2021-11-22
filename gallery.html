@@ -7,10 +7,11 @@
     <title>Галерея</title>
     <style>
     .block{
-        width: 650px;
-        height: 850px;
+        width: 1024px;
+        height: 768px;
         border: 2px solid rgb(131, 109, 96);
-        margin: 0 auto;}
+        margin: 0 auto;
+    background-size: cover;}
     </style>
 </head>
 <body>
@@ -21,9 +22,13 @@
             block=document.querySelector('.block'),
             i=0;
             block.onclick = boo;
+            boo();
             function boo(){
                 block.style.backgroundImage='url(images/'+arr[i]+')';
                 i++;
+                if(i==arr.length){
+                    i=0;
+                }
             }
         </script>
     </section>
