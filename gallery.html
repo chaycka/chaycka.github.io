@@ -12,6 +12,14 @@
         border: 2px solid rgb(131, 109, 96);
         margin: 0 auto;
     background-size: cover;}
+    .container{
+        max-width: 1200px;
+        text-align: center;
+        background:rgb(204, 193, 172);
+        color: darkslategrey;
+        margin: 0 auto;
+        padding: 100px 50px;
+    }
     </style>
 </head>
 <body>
@@ -31,6 +39,31 @@
                 }
             }
         </script>
+    </section>
+    <section>
+        <div class="container">
+            <div id="big">
+                <img src="images/1.jpg" width="1024px" alt="" id="bigp" class="bigp">
+            </div>
+            <div>
+                <img src="images/2.jpg" width="256px" alt="" class="smallp">
+                <img src="images/3.jpg" width="256px" alt="" class="smallp">
+                <img src="images/4.jpg" width="256px" alt="" class="smallp">
+                <img src="images/5.jpg" width="256px" alt="" class="smallp">
+            </div>
+            <script>
+                let el = document.getElementsByClassName('smallp');
+                console.log(el);
+                for (i=0; i < el.lenght; ++i){
+                    el[i].onclick = pic 
+                }
+                function pic(event){
+                    x=document.getElementById("bigp");
+                    console.log(event.target);
+                    x.src = event.target.src 
+                }
+            </script>
+        </div>
     </section>
 </body>
 </html>
