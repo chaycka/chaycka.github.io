@@ -20,6 +20,33 @@
         margin: 0 auto;
         padding: 100px 50px;
     }
+    .container1{
+        max-width: 1200px;
+        text-align: center;
+        background:rgb(184, 169, 190);
+        color: darkslategrey;
+        margin: 30 auto;
+        padding: 30px;
+    }
+    .slider{
+        border: 3px solid rgba(30, 21, 31, 0.979);
+        width: 256px;
+        height: 188px;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+    .slider-line{
+        width: 1280px;
+        height: 188px;
+        display: flex;
+        background: lightgray;
+        position: relative;
+        left: 0;
+        transition: all ease 1s;
+    }
+    .mini{
+        width: 256px;
+    }
     </style>
 </head>
 <body>
@@ -54,16 +81,51 @@
             <script>
                 let el = document.getElementsByClassName('smallp');
                 console.log(el);
-                for (i=0; i < el.lenght; ++i){
-                    el[i].onclick = pic 
+                for (i=0; i < el.length; ++i){
+                    el[i].onclick = pic; 
                 }
                 function pic(event){
                     x=document.getElementById("bigp");
                     console.log(event.target);
-                    x.src = event.target.src 
+                    x.src = event.target.src; 
                 }
             </script>
         </div>
+    </section>
+    <section>
+        <div class="container1">
+            <div class="slider">
+                <div class="slider-line">
+                    <img src="images/1.jpg" alt="" class="mini">
+                    <img src="images/2.jpg" alt="" class="mini">
+                    <img src="images/3.jpg" alt="" class="mini">
+                    <img src="images/4.jpg" alt="" class="mini">
+                    <img src="images/5.jpg" alt="" class="mini">
+                </div>
+            </div>
+            <button class="slider-prev">Назад</button>
+            <button class="slider-next">Вперед</button>
+        </div>
+        <script>
+            let offset = 0;
+            const sliderLine = document.querySelector('.slider-line');
+            document.querySelector('.slider-next').addEventListener('click', function () {
+                offset = offset + 256;
+                //offset+=256;
+                if (offset > 1024){
+                    offset = 0;
+                }
+            sliderLine.style.left = -offset + 'px';
+            })
+            document.querySelector('.slider-prev').addEventListener('click', function () {
+                offset = offset - 256;
+                //offset+=256;
+                if (offset < 0){
+                    offset = 1024;
+                }
+            sliderLine.style.left = -offset + 'px';
+            })
+        </script>
     </section>
 </body>
 </html>
