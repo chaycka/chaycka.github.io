@@ -13,4 +13,3 @@ main {background-color: rosybrown;}
 .cards{grid-column: span 1;margin-bottom: 10px;}
 .spiski{display: grid;grid-template-columns: repeat(2,1fr);}
 .one_spisok{grid-column: span 1;margin-bottom: 10px;}
-.header_h1 
