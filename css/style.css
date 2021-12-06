@@ -1,7 +1,21 @@
 h1, h3, h4 {font-family: 'Times New Roman'; color: black;}
 header{background-color: blanchedalmond;} 
-main {background-color: rosybrown;}
-.polosa {background-color: blanchedalmond;}
+main {
+    background: var(--background-color);
+    color: var(--text-color);}
+body{
+    --background-color: rgb(255, 241, 223);
+    --text-color: rgb(54, 42, 42);
+}
+:root{
+    --dark-background-color: rgb(59, 48, 37);
+    --dark-text-color: rgb(255, 241, 223);
+}
+body.theme-dark{
+    --background-color: var(--dark-background-color);
+    --text-color: var(--dark-text-color);
+}
+.polosa {background-color: rgb(97, 95, 92);}
 .header_wrapper{display:flex; flex-wrap: wrap; align-items: flex-end;justify-content: space-between;}
 .header_nav{display: flex;flex-wrap: wrap;}
 .header_logo{flex-basis: 20%;}
@@ -20,3 +34,4 @@ main {background-color: rosybrown;}
     -o-user-select: none;
     user-select: none;
 }
+
