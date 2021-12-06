@@ -4,33 +4,193 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <link href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" rel="stylesheet"> 
     <title>JavaScript</title>
     <style>
         .wrapper{
             display: grid;
-            grid-template-columns: repeat(3,1fr);
+            grid-template-columns: repeat(2,1fr);
             justify-items: center; 
         }
         .items{
-            width: 250px;
-            height: 250px;
+            width: 300px;
+            height: 500px;
             border: 2px solid rgb(95, 85, 73);
-            border-radius: 100px;
-            padding: 50px;
+            border-radius: 50px;
+            padding: 65px;
             grid-column: span 1;
-            margin-bottom: 15px;}
+            margin-bottom: 20px;}
     </style>
 </head>
 <body>
-    <section>
+    <header class= "header">
+        <div class="header_wrapper">
+        <div class="header_h1"><h1>Пример сайта</h1></div>    
+        <div class="header_logo"><a href="index.html"><img src="../images/cat.png" alt="Логотип" width="150"></a></div>
+        <nav class="header_nav">           
+            <ul class="header_menu">
+                <li class="header_item"><a href="">О себе</a></li>
+                <li class="header_item"><a href="pages/resume.html"  target="_blank">Резюме</a></li>
+                <li class="header_item"><a href="pages/potfolio.html">Портфолио</a></li>
+                <li class="header_item"><a href="index.html#komp">Компетенции</a></li>
+                <li class="header_item"><a href="pages/contacts.html">Мои контакты</a></li>
+            </ul>
+        </nav>
+        </div>
+    </header>
+    <main>
     <div class="wrapper">
-        <div class="items">Item 1</div>
-        <div class="items">Item 2</div>
-        <div class="items">Item 3</div>
-        <div class="items">Item 4</div>
-        <div class="items">Item 5</div>
-        <div class="items">Item 6</div>
+        <section class="items">
+            <script>
+                function checkForm(){console.log("Проверка");
+                var name = document.getElementById('name1').value;
+                console.log(name);
+                var fail="";
+                var viv = name1.value +" "+ email.value +" "+ tel.value;  
+                var tel = document.getElementById('tel');  
+                if (name==""||email==""||tel=="") 
+                fail="Заполните все поля.";    
+                else if (name1.length<=1||name1.length>30)
+                fail="Введите корректное имя.";
+                else if (tel.length>10)
+                fail = "Некорректный номер телефона.";
+                if (fail != ""){
+                    document.getElementById('error').innerHTML=fail;
+                } 
+               else{
+               document.getElementById('vivod').innerHTML=viv;
+               } 
+                return false;
+                }
+       
+            </script>   
+            
+       <script>
+           function fanc(){
+               document.getElementById('pochta').checked=true;
+               document.getElementById('tel').checked=true;
+               document.getElementById('nootv').checked=true;
+           }
+       </script>
+    </head>
+       <body>
+           <header><h2>Форма</h2></header>
+           <main>
+               <div class="left"></div>
+               <div class="middle">
+               <form action="" method="get" id="form1" onsubmit="return checkForm(this)">
+                   <div class="form-div" id="svaz">
+                       <div>Как вам удобно получить ответ?</div>
+                       <label for=""><input type="radio" id="pochta" value="по почте">по почте</label><br>
+                       <label for=""><input type="radio" id="tel" value="по телефону">по телефону</label><br>
+                       <label for=""><input type="radio" id="nootv" value="не отвечать">не отвечать</label><br>
+                   </div>
+                   <div class="form-div">
+                       <label for="theme">Укажите тему вопроса:</label>
+                       <select name="theme" id="theme" class="input-text">
+                           <option value="">работа</option>
+                           <option value="">сотрудничество</option>
+                           <option value="">личное</option>
+                       </select>
+                   </div>
+                   <div class="form-div">
+                       <div>И еще один вопрос?</div>
+                       <label for="checkbox1"><input type="checkbox" name="" id="checkbox1">может так</label><br>
+                       <label for="checkbox2"><input type="checkbox" name="" id="checkbox2">или так</label><br>
+                       <label for="checkbox3"><input type="checkbox" name="" id="checkbox3">а может вот так</label>
+                   </div>
+                   <div class="form-div">
+                   <label for="name" class="flex-row">Ваше имя:</label>
+                   <input type="text" name="name1" id="name1" class="input-text">
+               </div>
+               <div class="form-div" id="email1">
+                   <label for="email" class="flex-row">Ваш email:</label>
+                   <input type="email" name="email" id="email" class="input-text">
+               </div>
+               <div class="form-div" id="tel1">
+                   <label for="tel" class="flex-row">Ваш номер телефона:</label>
+                   <input type="tel" name="tel" id="tel" class="input-text">
+               </div>
+               <div class="form-div">
+                  <div>Задайте вопрос:</div>
+                  <div>
+                      <textarea cols="30"></textarea>
+                  </div>
+               </div>
+               <div class="align-center">
+                 <input type="submit" value="Отправить вопрос" class="input-text">
+               </div>
+               <div id="error" style="color: sienna;"></div>
+               <div id="vivod" style="color: brown;"></div>
+               </form>
+           </div>
+           <div class="right"></div>
+           </main>
+           <footer>Веб-технологии, задание 2</footer>
+       
+       <script>
+       // document.getElementById('pochta').addEventListener("click", hiddenClose);
+       // function hiddenClose(){
+       //     let x = document.getElementById('tel1');
+       //     if (x.style.display == "none"){
+       //         x.style.display = "block";
+       //     } else {
+       //         x.style.display = "none";
+       //     }
+       // } 
+       
+       // document.getElementById('tel').addEventListener("click", hiddenClose1);
+       // function hiddenClose1(){
+       //     let y = document.getElementById('email1');
+       //     if (y.style.display == "none"){
+       //         y.style.display = "block";
+       //     } else {
+       //         y.style.display = "none";
+       //     }
+       // } 
+       
+       document.getElementById('svaz').addEventListener("click", hiddenClick);
+       function hiddenClick(){
+           let x = document.getElementById('tel1');
+           let y = document.getElementById('email1');
+           if (document.getElementById('pochta').checked){
+               y.style.visibility = 'visible';
+           } else {
+               y.style.visibility = 'hidden';
+           }
+           if (document.getElementById('tel').checked){
+               x.style.visibility = 'visible';
+           } else {
+               x.style.visibility = 'hidden';
+           }
+       }
+       </script>
+        </section>
+
+
+        <section class="items">
+            
+        </section>
+
+
+        <section class="items">Item 3</section>
+        <section class="items">Item 4</section>
+        <section class="items">Item 5</section>
+        <section class="items">Item 6</sectionv>
     </div>
-    </section>
+</main>
+<footer>
+    <div class="footer_wrapper">
+<p>       
+    <a class="footer_ico" href=""><img src="../images/vklogo.png" alt="Вконтакте" width="50"></a>
+    <a class="footer_ico" href=""><img src="../images/githublogo.png" alt="GitHub" width="50"></a>
+    <a class="footer_ico" href=""><img src="../images/instlogo.png" alt="Инстаграм" width="50"></a>
+    <i class="footer_ico" class="fas fa-paw"></i>
+</p>
+
+    <p>Cайт разработан ФИ, Copyright © 2021</p> 
+</div>
+</footer>
 </body>
 </html>
