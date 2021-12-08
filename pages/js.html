@@ -201,10 +201,21 @@ It's Christmas, baby<br></p>
         </section>
 
 
-        <section class="items">Item 3</section>
+        <section class="items">
+            <textarea id="textarea" cols="50" rows="30"></textarea>
+<button>Очистить</button>
+<script>
+        textarea.value = localStorage.getItem('area');
+        textarea.oninput = () => {
+          localStorage.setItem('area', textarea.value)
+        };
+    </script>
+        </section>
+
         <section class="items">Item 4</section>
         <section class="items">Item 5</section>
         <section class="items">Item 6</sectionv>
+
     </div>
 </main>
 
