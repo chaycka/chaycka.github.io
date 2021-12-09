@@ -16,6 +16,13 @@ body.theme-dark{
     --background-color: var(--dark-background-color);
     --text-color: var(--dark-text-color);
 }
+@media (prefers-color-scheme: dark){
+    body.theme-auto{
+        --background-color: var(--dark-background-color);
+        --text-color: var(--dark-text-color);
+    }
+}
+
 .polosa {background-color: rgb(97, 95, 92);}
 .header_wrapper{display:flex; flex-wrap: wrap; align-items: flex-end;justify-content: space-between;}
 .header_nav{display: flex;flex-wrap: wrap;}
