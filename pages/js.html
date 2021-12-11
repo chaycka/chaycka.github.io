@@ -116,6 +116,16 @@ grid-area: right;
                 <option value="light">светлая</option>
                 <option value="dark">тёмная</option>
             </select>
+            <script>
+                function applyTheme(theme){
+                    document.body.classList.remove("theme-auto", "theme-light", "theme-dark");
+                    document.body.classList.add(`theme-${theme}`);
+                }
+                document.addEventListener("DOMContentLoaded", ()=>{
+                document.querySelector("#theme").addEventListener("change", function(){
+                    applyTheme(this.value);
+                });});
+            </script>
         </div>
     <div class="wrapper">
 
@@ -216,6 +226,18 @@ It's Christmas, baby<br></p>
         <section class="items">Item 5</section>
         <section class="items">Item 6</sectionv>
 
+            <section>
+                <h1>Хранение LocalStorage</h1>
+                    <button class="ls">Нажать</button>
+            </section>
+
+            <script>
+                let count = 0
+                document.querySelector('ls').onclick = () =>{
+                    count ++
+                    localStorage.setItem('b1', count);
+                };
+            </script>
     </div>
 </main>
 
@@ -269,6 +291,28 @@ It's Christmas, baby<br></p>
         }
     }
   </script>
+<script>
+    localStorage.setItem('data', 7);
+    console.log(localStorage.getItem('data'));
+    const a = [4, 5, 6, 7, 8];
+    localStorage.setItem('a', JSON.stringify(a));
+    let b = localStorage.getItem('a');
+    b = JSON.parse(b);
+    console.log(b);
+    console.log(b[0]);
+    console.log(b[1]);
+    console.log(typeof b);
 
+    const c = {
+        hello: 6,
+        j: 3,
+        4:'hi'};
+        localStorage.setItem('c', JSON.stringify(c));
+    let d = localStorage.getItem('c');
+    d = JSON.parse(d);
+    console.log(d);
+    console.log(typeof d);
+    window.addEventListener('storage')
+</script>
 </body>
 </html>
