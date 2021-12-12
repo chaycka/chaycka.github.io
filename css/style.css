@@ -23,7 +23,7 @@ html, body {
 }
 h1, h3, h2, h4 {
     font-family: 'Times New Roman';
-    color: black;}
+    color: #260F01;}
 
 header{
     background-color: #D9C7B8;
@@ -63,15 +63,16 @@ header{
         padding-left:20px;
         padding-right: 15px;}
 .header_preview{
+   font-size: 140%;
    text-align: center;
-   background-image: linear-gradient(to left bottom, #bfab99, #d2bab5, #dccccf, #e5dfe4, #f2f2f2);;
-   height: 400px;
+   background-image: linear-gradient(to left bottom, #bfab99, #d2bab5, #dccccf, #e5dfe4, #f2f2f2);
+   height: 250px;
    background-repeat: no-repeat;
    background-position: left;
    background-attachment: fixed;
    background-size: cover;
    padding-left: 250px;
-   padding-top: 100px;
+   padding-top: 125px;
 }
 .a_underline {
     text-decoration: none;
