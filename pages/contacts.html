@@ -6,6 +6,38 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/style.css">
     <title>Мои контакты</title>
+    <style>
+            .wrapper{
+            display: grid;
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center; 
+        }
+        .items{
+            
+            background-color: #BFAB99;
+            text-align: center;
+            width: 200px;
+            height: 200px;
+            border: 2px solid #260F01;
+            border-radius: 50px;
+            padding: 65px;
+            grid-column: span 1;
+            margin: 30px;
+            box-shadow: 1px 1px 6px 3px #BFAB99;
+            font-size:medium;}
+
+            h3{
+                margin-bottom: 85px;
+            }
+            .h3_tel{
+                margin-bottom: 100px;
+            }
+            .contact_icons{
+                display: grid;
+            grid-template-columns: repeat(3,1fr);
+            justify-items: center;
+            }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -14,17 +46,45 @@
             <nav class="header_nav">           
                 <ul class="header_menu">
                     <li class="header_item li_none"><a class = "a_underline" href="">О себе</a></li>
-                    <li class="header_item li_none"><a class = "a_underline" href="pages/resume.html"  target="_blank">Резюме</a></li>
-                    <li class="header_item li_none"><a class = "a_underline" href="pages/potfolio.html">Портфолио</a></li>
-                    <li class="header_item li_none"><a class = "a_underline" href="index.html#komp">Компетенции</a></li>
-                    <li class="header_item li_none"><a class = "a_underline" href="pages/contacts.html">Мои контакты</a></li>
-                    <li class="header_item_last li_none"><a class = "a_underline" href="pages/js.html">JavaScript</a></li>
+                    <li class="header_item li_none"><a class = "a_underline" href="../pages/resume.html"  target="_blank">Резюме</a></li>
+                    <li class="header_item li_none"><a class = "a_underline" href="../pages/potfolio.html">Портфолио</a></li>
+                    <li class="header_item li_none"><a class = "a_underline" href="../index.html#komp">Компетенции</a></li>
+                    <li class="header_item li_none"><a class = "a_underline" href="../pages/contacts.html">Мои контакты</a></li>
+                    <li class="header_item_last li_none"><a class = "a_underline" href="../pages/js.html">JavaScript</a></li>
                 </ul>
             </nav>
             </div>
+            <div class="header_preview">
+                <h1>Веб - технологии</h1>
+                <h3>Университет "Дубна"</h3>
+                </div>
     </header>
     <main>
-        <section>
+
+        <div class="wrapper">
+
+        <section class="items">
+            <h3>Я в социальных сетях:</h3> 
+            <div class="contact_icons">
+        <a class="footer_ico" href=""><img src="../images/vklogo.png" alt="Вконтакте" width="50"></a>
+        <a class="footer_ico" href=""><img src="../images/githublogo.png" alt="GitHub" width="50"></a>
+        <a class="footer_ico" href=""><img src="../images/instlogo.png" alt="Инстаграм" width="50"></a>
+           </div>
+        </section>
+
+        <section class="items">
+            <h3>Моя электронная почта:</h3>
+            <div> chzhm.20@uni-dubna.ru </div>
+        </section>
+
+        <section class="items">
+            <h3 class="h3_tel">Мой номер телефона:</h3>
+            <div>773-365-9687</div>
+        </section>
+
+    </div> 
+
+        <!-- <section>
             <h1>Хранение LocalStorage</h1>
             <div class="out"></div>
             <script>
@@ -33,7 +93,7 @@
                     document.querySelector('.out').textContent = localStorage.getItem('b1');
                 })
             </script>
-        </section>
+        </section> -->
     </main>
 
     <footer>
