@@ -62,6 +62,17 @@ header{
         border-left-style: solid;
         padding-left:20px;
         padding-right: 15px;}
+.header_preview{
+   text-align: center;
+   background-image: linear-gradient(to left bottom, #bfab99, #d2bab5, #dccccf, #e5dfe4, #f2f2f2);;
+   height: 400px;
+   background-repeat: no-repeat;
+   background-position: left;
+   background-attachment: fixed;
+   background-size: cover;
+   padding-left: 250px;
+   padding-top: 100px;
+}
 .a_underline {
     text-decoration: none;
     color: #260F01;
@@ -110,13 +121,13 @@ body.theme-dark{
         --text-color: var(--dark-text-color);
     }
 }
+.polosa {background-color: rgb(97, 95, 92);}
+
 footer{
 
     background-color: #260F01;
     color: #F2F2F2;
 }
-
-.polosa {background-color: rgb(97, 95, 92);}
 .footer_wrapper{
     display:flex;
     flex-wrap: wrap;
@@ -127,6 +138,12 @@ footer{
 .footer_ico{
     margin-right: 30px;
     border-width: 5px;}
+.footer_all_icons{
+    margin-left: 30px;
+}
+.footer_text{
+    margin-right: 30px;
+}
 .html_cards{display: grid;grid-template-columns: repeat(3,1fr);}
 .cards{grid-column: span 1;margin-bottom: 10px;}
 .spiski{display: grid;grid-template-columns: repeat(2,1fr);}
