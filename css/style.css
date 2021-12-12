@@ -151,8 +151,12 @@ footer{
 .cards{
     grid-column: span 1;
     margin-top: 15px;}
-.spiski{display: grid;grid-template-columns: repeat(2,1fr);}
-.one_spisok{grid-column: span 1;margin-bottom: 10px;}
+.spiski{
+    display: grid;
+    grid-template-columns: repeat(2,1fr); }
+.one_spisok
+{grid-column: span 1;
+margin: 10px;}
 .noselect{
     -moz-user-select: none;
     -webkit-user-select: none;
