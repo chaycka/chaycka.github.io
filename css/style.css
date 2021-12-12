@@ -47,11 +47,9 @@ header{
     display: flex;
     flex-wrap: wrap;}
 .header_menu{
-    text-decoration: none;
     display: flex;
     flex-wrap: wrap;}
 .header_item{
-    text-decoration: none;
     margin-right: 30px;
     border-width: 2px;
     border-left-style: solid;
@@ -61,10 +59,13 @@ header{
        text-decoration: none;
         margin-right: 15px;
         border-width: 2px;
-        text-decoration: none;
         border-left-style: solid;
         padding-left:20px;
         padding-right: 15px;}
+a {
+    text-decoration: none;
+    color: #260F01;
+           }
 li {
     list-style-type: none; /* убираем маркеры */
    }
