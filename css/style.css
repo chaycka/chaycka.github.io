@@ -62,13 +62,13 @@ header{
         border-left-style: solid;
         padding-left:20px;
         padding-right: 15px;}
-a {
+.a_underline {
     text-decoration: none;
     color: #260F01;
     cursor: pointer;
 	line-height: 1; /*задаём высоту строки*/
     position: relative;}
-    a:after {
+.a_underline:after {
         display: block;
         position: absolute;
         left: 0; /* направление подчёркивания */
@@ -79,8 +79,8 @@ a {
         transition: width 0.3s ease-out; /*задаём время анимации*/
     }
     
-a:hover:after,
-a:focus:after {
+.a_underline:hover:after,
+.a_underline:focus:after {
         width: 100%; /*устанавливаем значение 100% чтобы ссылка подчёркивалась полностью*/
     }    
 
