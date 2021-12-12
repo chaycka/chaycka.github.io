@@ -21,10 +21,17 @@ html, body {
     height: 100%;
     font-family: "Georgia", serif;
 }
-h1, h3, h2, h4 {font-family: 'Times New Roman'; color: black;}
+h1, h3, h2, h4 {
+    font-family: 'Times New Roman';
+    color: black;}
+
 header{
     background-color: #D9C7B8;} 
-.header_wrapper{display:flex; flex-wrap: wrap; align-items: flex-end;justify-content: space-between;}
+.header_wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;}
 .header_nav{
     height:100px;/* высота блока */
     align-items: center;
@@ -37,9 +44,10 @@ header{
     align-items: center;
     justify-content: center;
     display: flex;
-    flex-wrap: wrap;
-}
-.header_menu{display: flex;flex-wrap: wrap;}
+    flex-wrap: wrap;}
+.header_menu{
+    display: flex;
+    flex-wrap: wrap;}
 .header_item{
     margin-right: 30px;
     border-width: 2px;
@@ -47,17 +55,17 @@ header{
     border-left-style: solid;
     padding-left:20px;
     padding-right: 20px;}
-    .header_item_last{
+.header_item_last{
         margin-right: 15px;
         border-width: 2px;
         text-decoration: none;
         border-left-style: solid;
         padding-left:20px;
-        padding-right: 15px;
-    }
+        padding-right: 15px;}
 li {
-    list-style-type: none; /* Убираем маркеры */
+    list-style-type: none; /* убираем маркеры */
    }
+   
 main {
     background: var(--background-color);
     color: var(--text-color);}
@@ -87,8 +95,16 @@ footer{
 }
 
 .polosa {background-color: rgb(97, 95, 92);}
-.footer_wrapper{display:flex; flex-wrap: wrap; align-items: flex-end;justify-content: space-between;}
-.footer_ico{margin-right: 30px;border-width: 5px;}
+.footer_wrapper{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+    height:100px;/* высота блока */
+    align-items: center;}
+.footer_ico{
+    margin-right: 30px;
+    border-width: 5px;}
 .html_cards{display: grid;grid-template-columns: repeat(3,1fr);}
 .cards{grid-column: span 1;margin-bottom: 10px;}
 .spiski{display: grid;grid-template-columns: repeat(2,1fr);}
