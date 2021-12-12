@@ -102,6 +102,7 @@ li {
 main {
     background: var(--background-color);
     color: var(--text-color);}
+    
 body{
 
     --background-color: #F2F2F2;
@@ -120,6 +121,9 @@ body.theme-dark{
         --background-color: var(--dark-background-color);
         --text-color: var(--dark-text-color);
     }
+}
+section{
+    padding: 30px;
 }
 .polosa {background-color: rgb(97, 95, 92);}
 
@@ -145,7 +149,9 @@ footer{
     margin-right: 30px;
 }
 .html_cards{display: grid;grid-template-columns: repeat(3,1fr);}
-.cards{grid-column: span 1;margin-bottom: 10px;}
+.cards{
+    grid-column: span 1;
+    margin-bottom: 10px;}
 .spiski{display: grid;grid-template-columns: repeat(2,1fr);}
 .one_spisok{grid-column: span 1;margin-bottom: 10px;}
 .noselect{
