@@ -40,7 +40,21 @@ header{
     flex-wrap: wrap;
 }
 .header_menu{display: flex;flex-wrap: wrap;}
-.header_item{margin-right: 30px;border-width: 2px;text-decoration: none;border-left-style: solid;}
+.header_item{
+    margin-right: 30px;
+    border-width: 2px;
+    text-decoration: none;
+    border-left-style: solid;
+    padding-left:20px;
+    padding-right: 20px;}
+    .header_item_last{
+        margin-right: 15px;
+        border-width: 2px;
+        text-decoration: none;
+        border-left-style: solid;
+        padding-left:20px;
+        padding-right: 15px;
+    }
 li {
     list-style-type: none; /* Убираем маркеры */
    }
