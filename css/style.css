@@ -124,7 +124,7 @@ body.theme-dark{
 section{
     padding: 30px;
 }
-.polosa {background-color: rgb(97, 95, 92);}
+.polosa {background-color: #D9C7B8;}
 
 footer{
 
@@ -150,7 +150,7 @@ footer{
 .html_cards{display: grid;grid-template-columns: repeat(3,1fr);}
 .cards{
     grid-column: span 1;
-    margin-bottom: 10px;}
+    margin-top: 15px;}
 .spiski{display: grid;grid-template-columns: repeat(2,1fr);}
 .one_spisok{grid-column: span 1;margin-bottom: 10px;}
 .noselect{
