@@ -53,6 +53,99 @@ grid-area: right;
     width: 160px;
     height: 30px;
 }
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.chart__title {
+  width: 100%;
+  margin-bottom: 50px;
+  font-size: 20px;
+  font-weight: 300;
+  text-align: center;
+}
+
+.chart__data {
+  width: 250px;
+}
+
+.chart__input-group {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.chart__input-group:last-of-type {
+  margin-bottom: 50px;
+}
+
+.chart__label {
+  max-width: 100px;
+  margin-right: auto;
+}
+
+.input-field {
+  font-size: inherit;
+  color: inherit;
+  text-transform: uppercase;
+  text-align: center;
+
+  white-space: normal;
+  border: 1px solid #260F01;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+.chart__input {
+  width: 120px;
+  margin-right: 5px;
+}
+
+.chart__submit-button {
+  width: 100%;
+  padding: 10px;
+
+  cursor: pointer;
+}
+
+.chart__submit-button:hover {
+  color: #1f2021;
+
+  background-color: #D9C7B8;
+}
+
+.chart__canvas-wrapper {
+  height: 250px;
+  border: 1px solid #260F01;
+  border-radius: 5px;
+}
+.container1{
+        max-width: 1200px;
+        text-align: center;
+        margin: 30 auto;
+        padding: 30px;
+    }
+    .slider{
+        border: 3px solid #260F01;
+        width: 256px;
+        height: 188px;
+        margin: 20px auto;
+        overflow: hidden;
+    }
+    .slider-line{
+        width: 1280px;
+        height: 188px;
+        display: flex;
+        background: lightgray;
+        position: relative;
+        left: 0;
+        transition: all ease 1s;
+    }
+    .mini{
+        width: 256px;
+    }
     </style>
 
      <script>
@@ -96,7 +189,7 @@ grid-area: right;
             <div class="header_logo"><a href="../index.html"><img src="../images/cat.png" alt="Логотип" width="80"></a></div>
             <nav class="header_nav">           
                 <ul class="header_menu">
-                    <li class="header_item li_none"><a class = "a_underline" href="">О себе</a></li>
+                    <li class="header_item li_none"><a class = "a_underline" href="../index.html">О себе</a></li>
                     <li class="header_item li_none"><a class = "a_underline" href="../pages/resume.html"  target="_blank">Резюме</a></li>
                     <li class="header_item li_none"><a class = "a_underline" href="../pages/potfolio.html">Портфолио</a></li>
                     <li class="header_item li_none"><a class = "a_underline" href="../index.html#komp">Компетенции</a></li>
@@ -128,8 +221,20 @@ grid-area: right;
                 document.querySelector("#theme").addEventListener("change", function(){
                     applyTheme(this.value);
                 });});
+                document.addEventListener("DOMContentLoaded", () => {
+                    const savedTheme = localStorage.getItem("theme") || "auto";
+                    applyTheme(savedTheme);
+                    for (const optionElement of document.querySelectorAll("#theme option")){
+                        optionElement.selected = savedTheme === optionElement.value;
+                    }
+                    document.querySelector("#theme").addEventListener("change", function (){
+                        localStorage.setItem("theme", this.value);
+                        applyTheme (this.value);
+                    });
+                });
             </script>
         </div>
+
     <div class="wrapper">
 
         <section class="items">
@@ -211,25 +316,170 @@ It's Christmas, baby<br></p>
             <div>
                 <img src="" alt="">
             </div>
+            <img src="../images/js.jpg" alt="Новогодний кот" width="400px">
         </section>
 
 
         <section class="items">
             <textarea id="textarea" cols="50" rows="30"></textarea>
-<button>Очистить</button>
+            <button>Очистить</button>
+
 <script>
         textarea.value = localStorage.getItem('area');
         textarea.oninput = () => {
           localStorage.setItem('area', textarea.value)
         };
+
     </script>
         </section>
 
-        <section class="items">Item 4</section>
-        <section class="items">Item 5</section>
+        <section class="items">
+            <h1 class="chart__title">Диаграмма "Популярность языков программирования"</h1>
+            
+            <form class="chart__data" action="#" method="POST">
+              <div class="chart__input-group">
+                <label class="chart__label" for="javascript">JavaScript</label>
+                <input class="chart__input input-field" type="number" name="javascript" id="javascript" min="0" max="100" required>
+                <span>%</span>
+              </div>
+        
+              <div class="chart__input-group">
+                <label class="chart__label" for="php">PHP</label>
+                <input class="chart__input input-field" type="number" name="php" id="php" min="0" max="100" required>
+                <span>%</span>
+              </div>
+        
+              <div class="chart__input-group">
+                <label class="chart__label" for="python">Python</label>
+                <input class="chart__input input-field" type="number" name="python" id="python" min="0" max="100" required>
+                <span>%</span>
+              </div>
+        
+              <input class="chart__submit-button input-field" type="submit" value="Показать график">
+            </form>
+        
+            <div class="chart__canvas-wrapper">
+                <canvas id="canvas" width="500" height="250">Браузер не поддерживает Canvas</canvas>
+            </div>
+            <script>
+                const MAX_PERCENTAGE = 100;
+
+const COLORS = [
+  `#BFAB99`,
+  `#260F01`,
+  `#8C5535`
+];
+
+const BarSize = {
+  MAX_HEIGHT: 190,
+  WIDTH: 50
+};
+
+const BarCoordinate = {
+  INITIAL_X: 80,
+  INITIAL_Y: 220
+}
+
+const Font = {
+  SIZE: `18px`,
+  FAMILY: `Tahoma`
+};
+
+const LabelCoordinate = {
+  INITIAL_X: 30,
+  INITIAL_Y: 70
+}
+
+const Gap = {
+  HORIZONTAL: 60,
+  VERTICAL: 30
+}
+
+const formElement = document.querySelector(`.chart__data`);
+const inputElements = formElement.querySelectorAll(`.chart__input`);
+
+const getData = (inputElements) => {
+  return Array.from(inputElements).map((input, index) => ({
+    name: input.name,
+    value: input.value,
+    color: COLORS[index]
+  }));
+};
+
+const canvas = document.querySelector(`#canvas`);
+const ctx = canvas.getContext(`2d`);
+
+const renderChart = (items) => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  
+  let currentLabelY = LabelCoordinate.INITIAL_Y;
+  let currentBarX = BarCoordinate.INITIAL_X;
+  const gapBetweenBars = BarSize.WIDTH + Gap.HORIZONTAL;
+
+  for (const item of items) {
+    const barHeight = (item.value * BarSize.MAX_HEIGHT) / MAX_PERCENTAGE;
+    
+    ctx.fillStyle = item.color;
+    ctx.font = `${Font.SIZE} ${Font.FAMILY}`;
+    ctx.save();
+    ctx.translate(0, canvas.height);
+    ctx.rotate(-Math.PI/2);
+    ctx.fillText(item.name.toUpperCase(), LabelCoordinate.INITIAL_X, currentLabelY);
+    ctx.restore();
+    ctx.fillRect(currentBarX, BarCoordinate.INITIAL_Y, BarSize.WIDTH, -barHeight);
+    
+    currentBarX += gapBetweenBars;
+    currentLabelY += gapBetweenBars;
+  }
+};
+
+formElement.addEventListener(`submit`, (evt) => {
+  evt.preventDefault();
+  renderChart(getData(inputElements));
+  formElement.reset();
+});
+            </script>
+          </section>
+
+        
+        <section class="items">
+            <div class="container1">
+                <div class="slider">
+                    <div class="slider-line">
+                        <img src="../images/1.jpg" alt="" class="mini">
+                        <img src="../images/2.jpg" alt="" class="mini">
+                        <img src="../images/3.jpg" alt="" class="mini">
+                        <img src="../images/4.jpg" alt="" class="mini">
+                        <img src="../images/5.jpg" alt="" class="mini">
+                    </div>
+                </div>
+                <button class="slider-prev">Назад</button>
+                <button class="slider-next">Вперед</button>
+            </div>
+            <script>
+                let offset = 0;
+                const sliderLine = document.querySelector('.slider-line');
+                document.querySelector('.slider-next').addEventListener('click', function () {
+                    offset = offset + 256;
+                    //offset+=256;
+                    if (offset > 1024){
+                        offset = 0;
+                    }
+                sliderLine.style.left = -offset + 'px';
+                })
+                document.querySelector('.slider-prev').addEventListener('click', function () {
+                    offset = offset - 256;
+                    //offset+=256;
+                    if (offset < 0){
+                        offset = 1024;
+                    }
+                sliderLine.style.left = -offset + 'px';
+                })
+            </script>
+        </section>
         <section class="items">Item 6</sectionv>
 
-            <section>
+            <!-- <section>
                 <h1>Хранение LocalStorage</h1>
                     <button class="ls">Нажать</button>
             </section>
@@ -240,7 +490,7 @@ It's Christmas, baby<br></p>
                     count ++
                     localStorage.setItem('b1', count);
                 };
-            </script>
+            </script> -->
     </div>
 </main>
 
