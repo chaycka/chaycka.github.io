@@ -121,10 +121,16 @@ body {
   border: 1px solid #260F01;
   border-radius: 5px;
 }
+.container{
+        max-width: 1200px;
+        text-align: center;
+        margin: 0 auto;
+        padding: 100px 50px;
+    }
 .container1{
         max-width: 1200px;
         text-align: center;
-        margin: 30 auto;
+        margin: 0 auto;
         padding: 30px;
     }
     .slider{
@@ -477,7 +483,31 @@ formElement.addEventListener(`submit`, (evt) => {
                 })
             </script>
         </section>
-        <section class="items">Item 6</sectionv>
+        <section class="items">
+            <div class="container">
+                <div id="big">
+                    <img src="../images/1.jpg" width="256px" alt="" id="bigp" class="bigp">
+                </div>
+                <div>
+                    <img src="../images/2.jpg" width="128px" alt="" class="smallp">
+                    <img src="../images/3.jpg" width="128px" alt="" class="smallp">
+                    <img src="../images/4.jpg" width="128px" alt="" class="smallp">
+                    <img src="../images/5.jpg" width="128px" alt="" class="smallp">
+                </div>
+                <script>
+                    let el = document.getElementsByClassName('smallp');
+                    console.log(el);
+                    for (i=0; i < el.length; ++i){
+                        el[i].onclick = pic; 
+                    }
+                    function pic(event){
+                        x=document.getElementById("bigp");
+                        console.log(event.target);
+                        x.src = event.target.src; 
+                    }
+                </script>
+            </div>
+        </sectionv>
 
             <!-- <section>
                 <h1>Хранение LocalStorage</h1>
