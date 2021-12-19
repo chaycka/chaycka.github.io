@@ -249,9 +249,9 @@ body {
         <form action="" method="get" id="form1" onsubmit="return checkForm(this)">
             <div class="form-div" id="svaz">
                 <div>Как вам удобно получить ответ?</div>
-                <label for=""><input type="radio" id="pochta" value="по почте">по почте</label><br>
-                <label for=""><input type="radio" id="tel" value="по телефону">по телефону</label><br>
-                <label for=""><input type="radio" id="nootv" value="не отвечать">не отвечать</label><br>
+                <label for=""><input type="radio" name="answer" id="pochta" value="по почте">по почте</label><br>
+                <label for=""><input type="radio" name="answer" id="tel" value="по телефону">по телефону</label><br>
+                <label for=""><input type="radio" name="answer" id="nootv" value="не отвечать">не отвечать</label><br>
             </div>
             <div class="form-div">
                 <label for="theme">Укажите тему вопроса:</label>
@@ -447,7 +447,6 @@ formElement.addEventListener(`submit`, (evt) => {
             </script>
           </section>
 
-        
         <section class="items">
             <div class="container1">
                 <div class="slider">
